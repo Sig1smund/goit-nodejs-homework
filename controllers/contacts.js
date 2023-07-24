@@ -16,11 +16,10 @@ const getAll = async (req, res) => {
 //   return res.status(200).json(result);
 // };
 
-// const addContact = async (req, res) => {
-//   const id = crypto.randomBytes(16).toString("hex");
-//   const result = await contacts.addContact(id, req.body);
-//   res.status(201).json(result);
-// };
+const addContact = async (req, res) => {
+  const result = await Contact.create(req.body);
+  res.status(201).json(result);
+};
 
 // const deleteContact = async (req, res) => {
 //   const { contactId } = req.params;
@@ -40,7 +39,7 @@ const getAll = async (req, res) => {
 module.exports = {
   getAll: ctrlWrapper(getAll),
   //   getById: ctrlWrapper(getById),
-  //   addContact: ctrlWrapper(addContact),
+  addContact: ctrlWrapper(addContact),
   //   deleteContact: ctrlWrapper(deleteContact),
   //   updateContact: ctrlWrapper(updateContact),
 };

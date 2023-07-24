@@ -1,14 +1,12 @@
-// l10NKyvL5j5Ne6RU
+// const Contact = require("./contact");
 
-const Contact = require("./contact");
-
-const listContacts = async (req, res) => {
-  const result = await Contact.find();
-  res.json(result);
-  // const contacts = await fs.readFile(contactsPath, "utf8");
-  // console.log(contactsPath);
-  // return JSON.parse(contacts);
-};
+// const listContacts = async (req, res) => {
+//   const result = await Contact.find();
+//   res.json(result);
+// const contacts = await fs.readFile(contactsPath, "utf8");
+// console.log(contactsPath);
+// return JSON.parse(contacts);
+// };
 
 // const getContactById = async (contactId) => {
 //   const contacts = await fs.readFile(contactsPath, "utf8");
@@ -51,10 +49,10 @@ const listContacts = async (req, res) => {
 //   return updatedContact || null;
 // };
 
-module.exports = {
-  listContacts,
-  // getContactById,
-  // removeContact,
-  // addContact,
-  // updateContact,
-};
+// module.exports = {
+//   listContacts,
+// getContactById,
+// removeContact,
+// addContact,
+// updateContact,
+// };

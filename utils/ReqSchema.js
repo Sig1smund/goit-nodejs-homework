@@ -9,6 +9,7 @@ const ReqSchema = Joi.object({
     .regex(/^[0-9]{9}$/)
     .messages({ "string.pattern.base": `Phone number must have 9 digits.` })
     .required(),
+  favorite: Joi.boolean(),
 });
 
 module.exports = ReqSchema;
