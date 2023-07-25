@@ -9,7 +9,7 @@ const getAll = async (req, res) => {
     skip,
     limit,
   }).populate("owner", "name");
-  res.json(result);
+  res.status(200).json(result);
 };
 
 const getById = async (req, res) => {
