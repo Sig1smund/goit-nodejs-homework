@@ -3,12 +3,16 @@ const { ctrlWrapper, HttpError } = require("../utils");
 
 const getAll = async (req, res) => {
   const { _id: owner } = req.user;
-  const { page = 1, limit = 20 } = req.query;
+  const { page = 1, limit = 20, favorite = false } = req.query;
   const skip = (page - 1) * limit;
-  const result = await Contact.find({ owner }, "", {
-    skip,
-    limit,
-  }).populate("owner", "name");
+  const result = await Contact.find(
+    { owner, ...(favorite && { favorite }) },
+    "",
+    {
+      skip,
+      limit,
+    }
+  ).populate("owner", "name");
   res.status(200).json(result);
 };
 
