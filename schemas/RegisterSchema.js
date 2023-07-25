@@ -1,5 +1,5 @@
 const Joi = require("joi");
-const { emailValidationRegex } = require("../../models/user");
+const { emailValidationRegex } = require("../models/user");
 
 const RegisterSchema = Joi.object({
   name: Joi.string().required(),
