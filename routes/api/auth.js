@@ -5,10 +5,15 @@ const {
   RegisterSchema,
   LoginSchema,
   updateSubSchema,
+  emailSchema,
 } = require("../../schemas");
 const ctrl = require("../../controllers/auth");
 
 router.post("/register", validateBody(RegisterSchema), ctrl.register);
+
+router.get("/verify/:verificationToken", ctrl.verifyEmail);
+
+router.post("/verify", validateBody(emailSchema), ctrl.resendVerificationEmail);
 
 router.post("/login", validateBody(LoginSchema), ctrl.login);
 
