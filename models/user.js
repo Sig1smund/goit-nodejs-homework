@@ -1,7 +1,7 @@
 const { Schema, model } = require("mongoose");
 const { handleMongooseError } = require("../utils");
 
-const emailValidationRegex = /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/;
+const emailValidationRegex = /^[a-z0-9]+@[a-z0-9]+\.[a-z]{2,3}$/;
 
 const userSchema = new Schema(
   {
@@ -32,6 +32,14 @@ const userSchema = new Schema(
     avatarURL: {
       type: String,
       required: true,
+    },
+    verify: {
+      type: Boolean,
+      default: false,
+    },
+    verificationToken: {
+      type: String,
+      required: [true, "Verify token is required"],
     },
   },
   { versionKey: false, timestamps: false }
